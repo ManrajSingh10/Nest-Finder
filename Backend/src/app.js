@@ -8,10 +8,18 @@ const app = express()
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: process.env.CORS_ORIGIN.split(','),
     credentials: true 
   })
 );
+
+// const corsOptions = {
+//   origin: ['https://nest-finder-teal.vercel.app', 'http://localhost:5173'],  // Add localhost for dev
+//   methods: ['GET', 'POST'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// };
+
+// app.use(cors(corsOptions));
 
 app.use(express.json())
 app.use(urlencoded({extended:true}))

@@ -10,5 +10,4 @@ router.route("/markSeenAllMsg/:recieverId").put(verifyJwt,markSeenAllMsg)
 router.route("/unreadMsg").get(verifyJwt,unreadMsg)
 router.route("/notInterested/:chatId").delete(verifyJwt,notInterested)
 
-
 export default router
