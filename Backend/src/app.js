@@ -8,7 +8,8 @@ const app = express()
 
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN.split(','),
+    origin: 'http://localhost:5173',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true 
   })
 );
@@ -40,11 +41,11 @@ import favoutiteRouter from "./Routes/favourite.route.js"
 import chatRouter from "./Routes/chat.route.js"
 import requestRouter from "./Routes/request.route.js"
 
-app.use("/user",router)
-app.use("/property",propertyRouter)
-app.use("/favourite",favoutiteRouter)
-app.use("/chat", chatRouter)
-app.use("/request", requestRouter)
+app.use("/api/user",router)
+app.use("/api/property",propertyRouter)
+app.use("/api/favourite",favoutiteRouter)
+app.use("/api/chat", chatRouter)
+app.use("/api/request", requestRouter)
 
 
 export default server

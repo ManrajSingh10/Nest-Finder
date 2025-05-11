@@ -26,7 +26,7 @@ function PropertyDetail() {
   useEffect(()=>{
     const retrievePropertyData = async () => {
       try {
-        const response = await axios.get(`${backend}/property/listSingleProperty/${propertyId}`)
+        const response = await axios.get(`${backend}/api/property/listSingleProperty/${propertyId}`)
         setProperty(response.data.property)
       } catch (error) {
         console.error(error)

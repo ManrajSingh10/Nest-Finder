@@ -4,4 +4,4 @@ export const isLoggedin = () => {
   else return false
 }
 
-export const backend = "https://nest-finder-nbfq.onrender.com"
+export const backend = import.meta.env.VITE_BACKEND;
